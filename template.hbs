@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>质量链网API冒烟测试</title>
+</head>
+<body>
+  <div class="container">
+    <p>执行时间:  {{timestamp}}</p>
+    {{#with summary}}
+        {{#with stats}}
+        <table style="margin-top: 10px;border-collapse: collapse; border: 1px solid #aaa;width: 50%;"><tbody>
+            <tr><th style="vertical-align: baseline;padding: 5px 15px 5px 6px;background-color: #d5d5d5;border: 1px solid #aaa;text-align: left;">项目</th><th style="vertical-align: baseline;padding: 5px 15px 5px 6px;background-color: #d5d5d5;border: 1px solid #aaa;text-align: left;">运行（次）</th><th style="vertical-align: baseline;padding: 5px 15px 5px 6px;background-color: #d5d5d5;border: 1px solid #aaa;text-align: left;">失败（次）</th></tr>
+            <tr><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">接口调用</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">{{requests.total}}</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;"><span style="color:red;">{{requests.failed}}</td></tr>
+            <tr><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">测试用例</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">{{assertions.total}}</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;"><span style="color:red;">{{assertions.failed}}</span></td></tr>
+        </tbody></table>
+        {{/with}}
+        <br/>
+        <table style="margin-top: 10px;border-collapse: collapse; border: 1px solid #aaa;width: 50%;"><tbody>
+            <tr><th style="vertical-align: baseline;padding: 5px 15px 5px 6px;background-color: #d5d5d5;border: 1px solid #aaa;text-align: left;">项目</th><th style="vertical-align: baseline;padding: 5px 15px 5px 6px;background-color: #d5d5d5;border: 1px solid #aaa;text-align: left;">值</th></tr>
+            <tr><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">总体运行时间</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">{{duration}}</td></tr>
+            <tr><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">总体数据接收量</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">{{responseTotal}}</td></tr>
+            <tr><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">请求平均响应时间</td><td style="vertical-align: text-top;padding: 6px 15px 6px 6px;background-color: #efefef;border: 1px solid #aaa;">{{responseAverage}}</td></tr>
+        </tbody></table>
+      {{/with}}
+
+</body>
+</html>
