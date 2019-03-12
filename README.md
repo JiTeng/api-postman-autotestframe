@@ -1,7 +1,6 @@
 # APItest
-安装nodejs
-安装newman
-# jenkins配置：
+install nodejs&newman
+# jenkins settings
 cd C:\Users\.jenkins\workspace\newman
 
 rd /S /Q C:\Users\.jenkins\workspace\newman\APItest
@@ -13,3 +12,6 @@ cd C:\Users\.jenkins\workspace\newman\APItest
 call node .\APISmokeTest.js
 
 exit 0
+# contact
+If you have any question, send me email to 844563792@qq.com
+
