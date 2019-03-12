@@ -1,4 +1,6 @@
 # APItest
+安装nodejs
+安装newman
 # jenkins配置：
 cd C:\Users\jiteng\.jenkins\workspace\newman
 
