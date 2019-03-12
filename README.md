@@ -1,5 +1,5 @@
 # APItest
-install nodejs&newman
+postman+nodejs+newman+jenkins
 # jenkins settings
 cd C:\Users\.jenkins\workspace\newman
 
