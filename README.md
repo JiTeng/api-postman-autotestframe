@@ -3,7 +3,7 @@ postman+nodejs+newman+jenkins
 # jenkins settings
 rd /S /Q cloudchainAPItest-release
 
-call git clone git@git.xx.com:xx/xx.git
+call git clone https://github.com/JiTeng/api-postman-autotestframe.git
 
 cd cloudchainAPItest-release
 
