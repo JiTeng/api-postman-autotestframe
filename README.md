@@ -1,16 +1,10 @@
 # APItest
 postman+nodejs+newman+jenkins
 # jenkins settings
-cd C:\Users\.jenkins\workspace\newman
-
-rd /S /Q C:\Users\.jenkins\workspace\newman\APItest
-
-call git clone http://git.user.com/APItest.git
-
-cd C:\Users\.jenkins\workspace\newman\APItest
-
-call node .\APISmokeTest.js
-
+rd /S /Q cloudchainAPItest-release
+call git clone git@git.xx.com:xx/xx.git
+cd cloudchainAPItest-release
+call node .\APISmokeTest.js ngeespzvnugjbcgb
 exit 0
 # contact
 If you have any question, send me email to 844563792@qq.com
