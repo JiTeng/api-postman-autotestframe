@@ -13,9 +13,9 @@ var to_failure = 'jiteng@inspur.com;';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
-var from_success = '季滕API测试--成功 <844563792@qq.com>';
-var from_fail = '季滕API测试--失败 <844563792@qq.com>';
-var from_error = '季滕API测试--异常 <844563792@qq.com>';
+var from_success = '扫码接口监控--运行成功 <844563792@qq.com>';
+var from_fail = '扫码接口监控--运行失败 <844563792@qq.com>';
+var from_error = '扫码接口监控--运行异常 <844563792@qq.com>';
 
 var args = process.argv.splice(2)
 
@@ -91,7 +91,7 @@ function sendSuccess(sub,tracelog,test_names_failures){
     var mailOptions = {
         from: from_success,
         to: to_success,
-        subject: "质量链API（生产环境）测试报告--无失败信息："+sub,
+        subject: "扫码接口监控--运行测试报告--无失败信息："+sub,
         html:html
 	};
 
@@ -121,7 +121,7 @@ function sendFailed(sub,tracelog,test_names_failures){
 	var mailOptions = {
 		from: from_fail,
 		to: to_failure,
-		subject: "质量链API（生产环境）测试报告--有失败信息，请及时查看！！："+sub,
+		subject: "扫码接口监控--运行测试报告--有失败信息，请及时查看！！："+sub,
         html:html,
         attachments:[
                 {   
@@ -158,8 +158,8 @@ function sendError(){
 	var mailOptions = {
 		from: from_error,
 		to: to_failure,
-		subject: "质量链API（生产环境）测试报告--服务器没有响应，请及时查看！！",
-        text:"质量链API（生产环境）测试报告--服务器没有响应，请及时查看！！"
+		subject: "扫码接口监控--运行报告--服务器没有响应，请及时查看！！",
+        text:"扫码接口监控--运行报告--服务器没有响应，请及时查看！！"
 	};
 
 	transporter.sendMail(mailOptions, function(error, info) {
