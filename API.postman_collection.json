@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "30fd80b7-cd5c-4c5a-97f3-d0d286267a83",
+		"name": "质量链-生产环境 Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "搜索列表",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "580f2f0f-2637-415b-bbb1-f72c9fe66533",
+						"exec": [
+							"pm.test(\"搜索列表接口响应时间小于5秒\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"搜索列表是否调用成功\", function () {",
+							"    pm.expect(pm.response.text()).to.include('\"msg\":\"获取成功\"');",
+							"});",
+							"",
+							"pm.test(\"搜索列表是否包含浪潮信息\", function () {",
+							"    pm.expect(pm.response.text()).to.include('浪潮');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28e43d4f-e727-49e1-b5c9-4975cc1260f2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASEURLSERACH}}/api/api/search.do?method=search&INPUT_JSON_PARAM=%257b%2522param%2522%253a%2522%25e6%25b5%25aa%25e6%25bd%25ae%2522%252c%2522page%2522%253a1%252c%2522type%2522%253a%2522all%2522%252c%2522rows%2522%253a10%257d",
+					"host": [
+						"{{BASEURLSERACH}}"
+					],
+					"path": [
+						"api",
+						"api",
+						"search.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "search"
+						},
+						{
+							"key": "INPUT_JSON_PARAM",
+							"value": "%257b%2522param%2522%253a%2522%25e6%25b5%25aa%25e6%25bd%25ae%2522%252c%2522page%2522%253a1%252c%2522type%2522%253a%2522all%2522%252c%2522rows%2522%253a10%257d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索明细",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a64b17b-48b5-4023-a67a-728d5db6c32a",
+						"exec": [
+							"pm.test(\"搜索明细接口响应时间小于5秒\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"搜索明细是否调用成功\", function () {",
+							"    pm.expect(pm.response.text()).to.include('\"msg\":\"获取成功\"');",
+							"});",
+							"",
+							"pm.test(\"搜索明细是否包含格力关键字\", function () {",
+							"    pm.expect(pm.response.text()).to.include('格力');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1d0afe65-6c30-4cf9-a13d-670fb2bef227",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASEURLSERACH}}/api/api/search.do?method=searchDetail&INPUT_JSON_PARAM=%257b%2522type%2522%253a%2522ORGANIZE%2522%252c%2522key%2522%253a%252291442000686409571K%2522%257d",
+					"host": [
+						"{{BASEURLSERACH}}"
+					],
+					"path": [
+						"api",
+						"api",
+						"search.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "searchDetail"
+						},
+						{
+							"key": "INPUT_JSON_PARAM",
+							"value": "%257b%2522type%2522%253a%2522ORGANIZE%2522%252c%2522key%2522%253a%252291442000686409571K%2522%257d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索产品-相关",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a286c312-01ee-4fe7-919d-cc0f55fbab0a",
+						"exec": [
+							"pm.test(\"搜索产品接口响应时间小于5秒\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"搜索产品接口是否调用成功\", function () {",
+							"    pm.expect(pm.response.text()).to.include('\"RESULT_CODE\":\"0000\"');",
+							"});",
+							"pm.test(\"搜索产品接口是否包含浪潮关键字\", function () {",
+							"    pm.expect(pm.response.text()).to.include('浪潮');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "306524f3-c41f-4937-933a-3bbc32bf2440",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASEURLSERACH}}/api/api/search.do?method=searchProduct&INPUT_JSON_PARAM=%257b%2522param%2522%253a%2522%25e6%25b5%25aa%25e6%25bd%25ae%2522%257d",
+					"host": [
+						"{{BASEURLSERACH}}"
+					],
+					"path": [
+						"api",
+						"api",
+						"search.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "searchProduct"
+						},
+						{
+							"key": "INPUT_JSON_PARAM",
+							"value": "%257b%2522param%2522%253a%2522%25e6%25b5%25aa%25e6%25bd%25ae%2522%257d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
