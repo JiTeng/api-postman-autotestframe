@@ -1,11 +1,11 @@
 # APItest
 postman+nodejs+newman+jenkins
 # jenkins settings
-rd /S /Q cloudchainAPItest-release
+rd /S /Q api-postman-autotestframe
 
 call git clone https://github.com/JiTeng/api-postman-autotestframe.git
 
-cd cloudchainAPItest-release
+cd api-postman-autotestframe
 
 call node .\APISmokeTest.js ngeespzvnugjbcgb
 
