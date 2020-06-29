@@ -8,7 +8,8 @@ var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
 var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
 var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
-//var to_failure = 'jiteng@inspur.com;';
+//var to_success = 'jiteng@inspur.com';
+//var to_failure = 'jiteng@inspur.com';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
@@ -22,10 +23,8 @@ pass = args[0]
 receiver = args[1]
 
 if(receiver=='leader'){
-    to_success = 'shangguangyong@inspur.com;wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia02@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
-    to_failure = 'shangguangyong@inspur.com;wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia02@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
-    //to_success = 'jiteng@inspur.com;songmingming@inspur.com';
-    //to_failure = 'jiteng@inspur.com;songmingming@inspur.com';
+    to_success = 'jiteng@inspur.com;songmingming@inspur.com';
+    to_failure = 'jiteng@inspur.com;songmingming@inspur.com';
 }
 
 // call newman.run to pass `options` object and wait for callback 
