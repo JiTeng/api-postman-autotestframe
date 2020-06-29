@@ -13,9 +13,9 @@ var to_failure = 'jiteng@inspur.com;';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
-var from_success = '扫码接口监控--运行成功 <844563792@qq.com>';
-var from_fail = '扫码接口监控--运行失败 <844563792@qq.com>';
-var from_error = '扫码接口监控--运行异常 <844563792@qq.com>';
+var from_success = '扫码接口监控--成功 <844563792@qq.com>';
+var from_fail = '扫码接口监控--失败 <844563792@qq.com>';
+var from_error = '扫码接口监控--异常 <844563792@qq.com>';
 
 var args = process.argv.splice(2)
 
