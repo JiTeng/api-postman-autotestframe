@@ -6,23 +6,27 @@ var export_file = './htmlResults_for_mail.html';
 var export_file_junit = './junit.xml';
 var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
-var to_success = 'jiteng@inspur.com';
-var to_failure = 'jiteng@inspur.com';
-//var to_success = '';
-//var to_failure = '';
+//var to_success = 'jiteng@inspur.com;songmingming@inspur.com';
+//var to_failure = 'wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia_lc@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
+var to_success = 'jiteng@inspur.com;';
+var to_failure = 'jiteng@inspur.com;';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
-var from_success = 'API测试--成功 <844563792@qq.com>';
-var from_fail = 'API测试--失败 <844563792@qq.com>';
-var from_error = 'API测试--异常 <844563792@qq.com>';
+var from_success = '季滕API测试--成功 <844563792@qq.com>';
+var from_fail = '季滕API测试--失败 <844563792@qq.com>';
+var from_error = '季滕API测试--异常 <844563792@qq.com>';
 
-var args1 = process.argv.splice(2)
-if(args1=='leader'){
-    to_success = '';
-    to_failure = '';
-    //to_success = '';
-    //to_failure = '';
+var args = process.argv.splice(2)
+
+pass = args[0]
+receiver = args[1]
+
+if(receiver=='leader'){
+    to_success = 'shangguangyong@inspur.com;wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia02@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
+    to_failure = 'shangguangyong@inspur.com;wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia02@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
+    //to_success = 'jiteng@inspur.com;songmingming@inspur.com';
+    //to_failure = 'jiteng@inspur.com;songmingming@inspur.com';
 }
 
 // call newman.run to pass `options` object and wait for callback 
@@ -87,7 +91,7 @@ function sendSuccess(sub,tracelog,test_names_failures){
     var mailOptions = {
         from: from_success,
         to: to_success,
-        subject: "API（生产环境）测试报告--无失败信息："+sub,
+        subject: "质量链API（生产环境）测试报告--无失败信息："+sub,
         html:html
 	};
 
@@ -117,7 +121,7 @@ function sendFailed(sub,tracelog,test_names_failures){
 	var mailOptions = {
 		from: from_fail,
 		to: to_failure,
-		subject: "API（生产环境）测试报告--有失败信息，请及时查看！！："+sub,
+		subject: "质量链API（生产环境）测试报告--有失败信息，请及时查看！！："+sub,
         html:html,
         attachments:[
                 {   
@@ -154,8 +158,8 @@ function sendError(){
 	var mailOptions = {
 		from: from_error,
 		to: to_failure,
-		subject: "API（生产环境）测试报告--服务器没有响应，请及时查看！！",
-        text:"API（生产环境）测试报告--服务器没有响应，请及时查看！！"
+		subject: "质量链API（生产环境）测试报告--服务器没有响应，请及时查看！！",
+        text:"质量链API（生产环境）测试报告--服务器没有响应，请及时查看！！"
 	};
 
 	transporter.sendMail(mailOptions, function(error, info) {
