@@ -6,10 +6,9 @@ var export_file = './htmlResults_for_mail.html';
 var export_file_junit = './junit.xml';
 var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
-//var to_success = 'jiteng@inspur.com;songmingming@inspur.com';
-//var to_failure = 'wbwang@inspur.com;mayantang@inspur.com;xuyp@inspur.com;hljun@inspur.com;jiteng@inspur.com;lijia_lc@inspur.com;qipengtao@inspur.com;lixiliang01@inspur.com;songmingming@inspur.com';
-var to_success = 'jiteng@inspur.com;';
-var to_failure = 'jiteng@inspur.com;';
+var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
+var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
+//var to_failure = 'jiteng@inspur.com;';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
