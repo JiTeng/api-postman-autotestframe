@@ -22,6 +22,9 @@
 							"});\r",
 							"pm.test(\"产品详情接口（阿胶）返回信息包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"东阿阿胶股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"产品详情接口（阿胶）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"PRODUCT_NAME\":\"红标阿胶250g\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -80,6 +83,9 @@
 							"});\r",
 							"pm.test(\"产品详情接口（花冠）返回信息包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"花冠集团酿酒股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"产品详情接口（花冠）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"PRODUCT_NAME\":\"花冠鲁雅香年份储藏17\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -138,6 +144,9 @@
 							"});\r",
 							"pm.test(\"质量追溯接口（阿胶）返回信息包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"东阿阿胶股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"质量追溯接口（阿胶）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"PRODUCT_NAME\":\"红标阿胶250g\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -196,6 +205,9 @@
 							"});\r",
 							"pm.test(\"质量追溯接口（花冠）返回信息包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"BASE_SIMPLE_NAME\":\"花冠集团\"');\r",
+							"});\r",
+							"pm.test(\"质量追溯接口（花冠）返回信息包含原料信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"MATERIAL_NAME\":\"糯米\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -366,6 +378,9 @@
 							"});\r",
 							"pm.test(\"获取企业文化数据（阿胶）包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"东阿阿胶股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"获取企业文化数据（阿胶）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"productName\":\"红标阿胶250g\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -424,6 +439,9 @@
 							"});\r",
 							"pm.test(\"获取企业文化数据（花冠）包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"花冠集团酿酒股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"获取企业文化数据（花冠）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"productName\":\"花冠鲁雅香年份储藏17\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -482,6 +500,9 @@
 							"});\r",
 							"pm.test(\"获取放心购接口（阿胶）包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"东阿阿胶股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"获取放心购接口（阿胶）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"PRODUCT_NAME\":\"红标阿胶250g\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -540,6 +561,9 @@
 							"});\r",
 							"pm.test(\"获取放心购接口（花冠）包含企业信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"ORGANIZE_NAME\":\"花冠集团酿酒股份有限公司\"');\r",
+							"});\r",
+							"pm.test(\"获取放心购接口（花冠）返回信息包含商品信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"PRODUCT_NAME\":\"花冠鲁雅香年份储藏17\"');\r",
 							"});"
 						],
 						"type": "text/javascript"
