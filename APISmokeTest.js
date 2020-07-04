@@ -21,12 +21,8 @@ var from_error = '扫码接口监控--异常 <844563792@qq.com>';
 var args = process.argv.splice(2)
 
 pass = args[0]
-receiver = args[1]
-
-if(receiver=='leader'){
-    to_success = 'jiteng@inspur.com;songmingming@inspur.com';
-    to_failure = 'jiteng@inspur.com;songmingming@inspur.com';
-}
+smspass = args[1]
+smsurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15253197573&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
 
 // call newman.run to pass `options` object and wait for callback 
 newman.run({
@@ -66,7 +62,7 @@ newman.run({
         }
     
         if(network_failed==0 && unit_failed==0){
-	    http.get("http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password=1a7b83c02e490938aa6f24b17428361e&mobile=15253197573&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json");
+	    http.get(smsurl);
             sendSuccess(stats,tracelog,test_names_failures);
         }
         else{
