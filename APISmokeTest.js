@@ -32,11 +32,13 @@ newman.run({
     environment: require(env_file)
 }, function (err,summary) {
     if (err) { 
+	http.get(smsurl);
         sendError();
         console.error('error:'+err);
         throw err;
     }
     else if(summary.error){
+	http.get(smsurl);
         sendError();
         console.error('summary.error:'+summary.error);
         throw summary.error;
@@ -62,10 +64,10 @@ newman.run({
         }
     
         if(network_failed==0 && unit_failed==0){
-	    http.get(smsurl);
             sendSuccess(stats,tracelog,test_names_failures);
         }
         else{
+            http.get(smsurl);
             sendFailed(stats,tracelog,test_names_failures);
         }
     }
