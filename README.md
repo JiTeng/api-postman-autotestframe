@@ -9,9 +9,9 @@ cd api-postman-autotestframe
 
 call npm init -y
 
-call npm install newman nodemailer newman-reporter-html
+call npm install newman nodemailer newman-reporter-html http
 
-call node .\APISmokeTest.js password
+call node .\APISmokeTest.js password smspassword
 
 exit 0
 # contact
