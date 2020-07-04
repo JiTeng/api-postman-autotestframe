@@ -1,15 +1,16 @@
 var newman = require('newman'); 
 var nodemailer  = require('nodemailer');
 var fs = require('fs');
+var http=require('http');
 
 var export_file = './htmlResults_for_mail.html';
 var export_file_junit = './junit.xml';
 var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
-var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
-var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
-//var to_success = 'jiteng@inspur.com';
-//var to_failure = 'jiteng@inspur.com';
+//var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
+//var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
+var to_success = 'jiteng@inspur.com';
+var to_failure = 'jiteng@inspur.com';
 var user = '844563792@qq.com';
 // 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
@@ -65,6 +66,7 @@ newman.run({
         }
     
         if(network_failed==0 && unit_failed==0){
+	    http.get("http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password=1a7b83c02e490938aa6f24b17428361e&mobile=15253197573&content=您的验证码是：999999。请不要把验证码泄露给其他人。&format=json");
             sendSuccess(stats,tracelog,test_names_failures);
         }
         else{
