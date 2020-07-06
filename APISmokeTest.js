@@ -23,6 +23,7 @@ var args = process.argv.splice(2)
 pass = args[0]
 smspass = args[1]
 smsurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15253197573&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
+smslxlurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15754310718&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
 
 // call newman.run to pass `options` object and wait for callback 
 newman.run({
@@ -33,12 +34,14 @@ newman.run({
 }, function (err,summary) {
     if (err) { 
 	http.get(smsurl);
+	http.get(smslxlurl);
         sendError();
         console.error('error:'+err);
         throw err;
     }
     else if(summary.error){
 	http.get(smsurl);
+	http.get(smslxlurl);
         sendError();
         console.error('summary.error:'+summary.error);
         throw summary.error;
@@ -68,6 +71,7 @@ newman.run({
         }
         else{
             http.get(smsurl);
+	    http.get(smslxlurl);
             sendFailed(stats,tracelog,test_names_failures);
         }
     }
