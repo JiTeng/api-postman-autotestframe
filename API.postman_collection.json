@@ -607,23 +607,23 @@
 			"response": []
 		},
 		{
-			"name": "校验浪潮云码数据",
+			"name": "珠宝check接口",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "66b15631-1a3a-4a97-9e35-e5cff02b68ca",
 						"exec": [
-							"pm.test(\"校验浪潮云码数据接口返回码是 200\", function () {\r",
+							"pm.test(\"珠宝check接口返回码是 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"校验浪潮云码数据接口响应时间小于10秒\", function () {\r",
+							"pm.test(\"珠宝check接口响应时间小于10秒\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
 							"});\r",
-							"pm.test(\"校验浪潮云码数据接口返回信息包含校验成功信息\", function () {\r",
+							"pm.test(\"珠宝check接口返回信息包含校验成功信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"resultDesc\":\"校验成功\"');\r",
 							"});\r",
-							"pm.test(\"校验浪潮云码数据接口返回信息包含证书信息\", function () {\r",
+							"pm.test(\"珠宝check接口返回信息包含证书信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"value\":\"CSF448053\"');\r",
 							"});"
 						],
@@ -661,26 +661,26 @@
 			"response": []
 		},
 		{
-			"name": "查询区块链数据",
+			"name": "珠宝query接口",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "504bd102-fb04-453f-9735-669573f17311",
 						"exec": [
-							"pm.test(\"查询区块链数据接口返回码是 200\", function () {\r",
+							"pm.test(\"珠宝query接口返回码是 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"查询区块链数据接口响应时间小于10秒\", function () {\r",
+							"pm.test(\"珠宝query接口响应时间小于10秒\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
 							"});\r",
-							"pm.test(\"查询区块链数据接口返回信息包含获取成功信息\", function () {\r",
+							"pm.test(\"珠宝query接口返回信息包含获取成功信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"resultDesc\":\"获取成功!\"');\r",
 							"});\r",
-							"pm.test(\"查询区块链数据接口返回信息包含证书信息\", function () {\r",
+							"pm.test(\"珠宝query接口返回信息包含证书信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"value\":\"CSF448053\"');\r",
 							"});\r",
-							"pm.test(\"查询区块链数据接口返回信息包含区块链信息\", function () {\r",
+							"pm.test(\"珠宝query接口返回信息包含区块链信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"transactionId\":\"a014606c6799ff5fa4438b9771a1ab58465a0c47c6a1df9b9a2deaa0b121a6b1\"');\r",
 							"});"
 						],
@@ -693,8 +693,8 @@
 				"header": [
 					{
 						"key": "Token",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJpY2NzMjAyMDA1MjUxNDQ0MDg2OTI3MTE1MTcxMzU3NCIsImlhdCI6MTU5MTE3MjM1MCwiaXNzIjoiaWNjcyIsInN1YiI6IjAyIiwiZXhwIjoxNTkxMTczNTUwfQ.7cbbUmrfQoJ4CgUUiDzjc7gNAVKwOq_pF8YH5w9VIPU",
-						"type": "text"
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJpY2NzMjAyMDA1MjUxNDQ0MDg2OTI3MTE1MTcxMzU3NCIsImlhdCI6MTU5MTE3MjM1MCwiaXNzIjoiaWNjcyIsInN1YiI6IjAyIiwiZXhwIjoxNTkxMTczNTUwfQ.7cbbUmrfQoJ4CgUUiDzjc7gNAVKwOq_pF8YH5w9VIPU"
 					}
 				],
 				"body": {
