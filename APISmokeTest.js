@@ -63,7 +63,9 @@ newman.run({
         var arr = summary['run']['failures'];
         var test_names_failures='';
         for ( var i = 0; i <arr.length; i++){
-            test_names_failures=test_names_failures+(i+1)+'、'+'用例名称：'+arr[i].error.test+'。 执行信息：'+arr[i].error.message+';'+' '+'\r\n';
+            if(arr[i].error.hasOwnProperty('test') && arr[i].error.hasOwnProperty('message')){
+                test_names_failures=test_names_failures+(i+1)+'、'+'用例名称：'+arr[i].error.test+'。 执行信息：'+arr[i].error.message+';'+' '+'\r\n';
+	    }
         }
     
         if(network_failed==0 && unit_failed==0){
