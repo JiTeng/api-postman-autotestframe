@@ -7,13 +7,15 @@ var export_file = './htmlResults_for_mail.html';
 var export_file_junit = './junit.xml';
 var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
+
 var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
 var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
 //var to_success = 'jiteng@inspur.com';
 //var to_failure = 'jiteng@inspur.com';
+
 var user = '844563792@qq.com';
-// 这里密码不是qq密码，是你设置的smtp授权码
 var pass = '';
+
 var from_success = '扫码接口监控--成功 <844563792@qq.com>';
 var from_fail = '扫码接口监控--失败 <844563792@qq.com>';
 var from_error = '扫码接口监控--异常 <844563792@qq.com>';
@@ -22,10 +24,10 @@ var args = process.argv.splice(2)
 
 pass = args[0]
 smspass = args[1]
+
 smsurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15253197573&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
 smslxlurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15754310718&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
 
-// call newman.run to pass `options` object and wait for callback 
 newman.run({
     collection: require(collection_file),
     reporters: ['html','junit'],
@@ -63,7 +65,7 @@ newman.run({
         var arr = summary['run']['failures'];
         var test_names_failures='';
         for ( var i = 0; i <arr.length; i++){
-            if(arr[i].error.hasOwnProperty('test') && arr[i].error.hasOwnProperty('message')){
+            if(arr[i].hasOwnProperty('error') && arr[i].error.hasOwnProperty('test') && arr[i].error.hasOwnProperty('message')){
                 test_names_failures=test_names_failures+(i+1)+'、'+'用例名称：'+arr[i].error.test+'。 执行信息：'+arr[i].error.message+';'+' '+'\r\n';
 	    }
         }
@@ -81,9 +83,9 @@ newman.run({
 
 function sendSuccess(sub,tracelog,test_names_failures){
     var transporter = nodemailer.createTransport({
-      service: 'qq', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
-      port: 465, // SMTP 端口
-      secureConnection: true, // 使用了 SSL
+      service: 'qq', 
+      port: 465,
+      secureConnection: true, 
       auth: {
         user: user,
         pass: pass,
@@ -111,9 +113,9 @@ function sendSuccess(sub,tracelog,test_names_failures){
 }
 function sendFailed(sub,tracelog,test_names_failures){
     var transporter = nodemailer.createTransport({
-      service: 'qq', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
-      port: 465, // SMTP 端口
-      secureConnection: true, // 使用了 SSL
+      service: 'qq', 
+      port: 465, 
+      secureConnection: true, 
       auth: {
         user: user,
         pass: pass,
@@ -148,9 +150,9 @@ function sendFailed(sub,tracelog,test_names_failures){
 }
 function sendError(){
     var transporter = nodemailer.createTransport({
-      service: 'qq', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
-      port: 465, // SMTP 端口
-      secureConnection: true, // 使用了 SSL
+      service: 'qq', 
+      port: 465, 
+      secureConnection: true, 
       auth: {
         user: user,
         pass: pass,
