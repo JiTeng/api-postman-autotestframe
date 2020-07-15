@@ -1,6 +1,8 @@
 # APItest
 postman+nodejs+newman+jenkins
 # jenkins settings
+git clone https://github.com/JiTeng/api-postman-autotestframe.git
+
 cd api-postman-autotestframe
 
 git pull
