@@ -607,60 +607,6 @@
 			"response": []
 		},
 		{
-			"name": "珠宝check接口",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "66b15631-1a3a-4a97-9e35-e5cff02b68ca",
-						"exec": [
-							"pm.test(\"珠宝check接口返回码是 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"珠宝check接口响应时间小于10秒\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
-							"});\r",
-							"pm.test(\"珠宝check接口返回信息包含校验成功信息\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include('\"resultDesc\":\"校验成功\"');\r",
-							"});\r",
-							"pm.test(\"珠宝check接口返回信息包含证书信息\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include('\"value\":\"CSF448053\"');\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"ticket\": \"9386d7268adf4326a333894f2fd1fd9b\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://iccs-cn-beijing.qualink.com/iccs/chain/check",
-					"protocol": "https",
-					"host": [
-						"iccs-cn-beijing",
-						"qualink",
-						"com"
-					],
-					"path": [
-						"iccs",
-						"chain",
-						"check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "珠宝query接口",
 			"event": [
 				{
