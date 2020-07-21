@@ -203,9 +203,6 @@
 							"pm.test(\"质量追溯接口（花冠）响应时间小于10秒\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
 							"});\r",
-							"pm.test(\"质量追溯接口（花冠）返回信息包含企业信息\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include('\"BASE_SIMPLE_NAME\":\"花冠集团\"');\r",
-							"});\r",
 							"pm.test(\"质量追溯接口（花冠）返回信息包含原料信息\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include('\"MATERIAL_NAME\":\"糯米\"');\r",
 							"});"
