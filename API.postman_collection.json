@@ -665,6 +665,120 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "基地接口（阿胶）",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5cd138ad-1bf6-4bc1-b209-91d4b27af649",
+						"exec": [
+							"pm.test(\"基地接口（阿胶）返回码是 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"基地接口（阿胶）响应时间小于10秒\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"pm.test(\"基地接口（阿胶）返回信息包含基地信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"BASE_SIMPLE_NAME\":\"山东东阿黑毛驴养殖基地\"');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.qualink.com/qcs/api/trace/GetTraceBaseInfoV3.do?method=getTraceBaseInfo&&INPUT_JSON_PARAM=%257B%2522id%2522%253A%252297673952647283197257%2522%252C%2522type%2522%253A%25221%2522%252C%2522productCode%2522%253A%25226939527511116%2522%257D",
+					"protocol": "https",
+					"host": [
+						"www",
+						"qualink",
+						"com"
+					],
+					"path": [
+						"qcs",
+						"api",
+						"trace",
+						"GetTraceBaseInfoV3.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "getTraceBaseInfo"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "INPUT_JSON_PARAM",
+							"value": "%257B%2522id%2522%253A%252297673952647283197257%2522%252C%2522type%2522%253A%25221%2522%252C%2522productCode%2522%253A%25226939527511116%2522%257D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "基地接口（花冠）",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b684638d-ca22-4e73-894e-e306bbb35783",
+						"exec": [
+							"pm.test(\"基地接口（花冠）返回码是 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"基地接口（花冠）响应时间小于10秒\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"pm.test(\"基地接口（花冠）返回信息包含基地信息\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"BASE_SIMPLE_NAME\":\"花冠集团\"');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.qualink.com/qcs/api/trace/GetTraceBaseInfoV3.do?method=getTraceBaseInfo&&INPUT_JSON_PARAM=%257b%2522id%2522%253a%2522000157983850%2522%252c%2522type%2522%253a%25220%2522%252c%2522productCode%2522%253a%25226903862204514%2522%257d",
+					"protocol": "https",
+					"host": [
+						"www",
+						"qualink",
+						"com"
+					],
+					"path": [
+						"qcs",
+						"api",
+						"trace",
+						"GetTraceBaseInfoV3.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "getTraceBaseInfo"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "INPUT_JSON_PARAM",
+							"value": "%257b%2522id%2522%253a%2522000157983850%2522%252c%2522type%2522%253a%25220%2522%252c%2522productCode%2522%253a%25226903862204514%2522%257d"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
