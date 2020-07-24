@@ -779,6 +779,55 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "大屏接口",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3202e958-d736-43a3-8140-be2551a0055d",
+						"exec": [
+							"pm.test(\"大屏接口返回码是 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"大屏接口响应时间小于10秒\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"pm.test(\"大屏接口返回信息包含codetrue\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"code\":true');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.qualink.com/qcs/api/trace/HomePageInfo.do?method=GetZhZxAttachInfo",
+					"protocol": "https",
+					"host": [
+						"www",
+						"qualink",
+						"com"
+					],
+					"path": [
+						"qcs",
+						"api",
+						"trace",
+						"HomePageInfo.do"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "GetZhZxAttachInfo"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
