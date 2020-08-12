@@ -21,6 +21,6 @@ git pull
     
 )
 
-call node .\APISmokeTest.js password1 password2
+call node APISmokeTest.js password1 password2
 
 exit 0
