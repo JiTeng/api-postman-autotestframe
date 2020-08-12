@@ -8,17 +8,17 @@ var export_file_junit = './junit.xml';
 var collection_file = './API.postman_collection.json';
 var env_file = './postman_environment.json';
 
-var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
-var to_failure = 'mayantang@inspur.com;hljun@inspur.com;liuyuheng@inspur.com;jiteng@inspur.com;zhangsiqiao@inspur.com;lijia_lc@inspur.com;mazhenrj@inspur.com;hujianren@inspur.com;lixiliang01@inspur.com;maotiezhu@inspur.com';
-//var to_success = 'jiteng@inspur.com';
-//var to_failure = 'jiteng@inspur.com';
+//var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
+//var to_failure = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
+var to_success = 'jiteng@inspur.com';
+var to_failure = 'jiteng@inspur.com';
 
 var user = '844563792@qq.com';
 var pass = '';
 
-var from_success = '扫码接口监控--成功 <844563792@qq.com>';
-var from_fail = '扫码接口监控--失败 <844563792@qq.com>';
-var from_error = '扫码接口监控--异常 <844563792@qq.com>';
+var from_success = '接口监控--成功 <844563792@qq.com>';
+var from_fail = '接口监控--失败 <844563792@qq.com>';
+var from_error = '接口监控--异常 <844563792@qq.com>';
 
 var args = process.argv.splice(2)
 
@@ -26,7 +26,6 @@ pass = args[0]
 smspass = args[1]
 
 smsurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15253197573&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
-smslxlurl="http://106.ihuyi.com/webservice/sms.php?method=Submit&account=C19358916&password="+smspass+"&mobile=15754310718&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A999999%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82&format=json"
 
 newman.run({
     collection: require(collection_file),
@@ -35,15 +34,13 @@ newman.run({
     environment: require(env_file)
 }, function (err,summary) {
     if (err) { 
-	http.get(smsurl);
-	http.get(smslxlurl);
+	//http.get(smsurl);
         sendError();
         console.error('error:'+err);
         throw err;
     }
     else if(summary.error){
-	http.get(smsurl);
-	http.get(smslxlurl);
+	//http.get(smsurl);
         sendError();
         console.error('summary.error:'+summary.error);
         throw summary.error;
@@ -74,8 +71,7 @@ newman.run({
             sendSuccess(stats,tracelog,test_names_failures);
         }
         else{
-            http.get(smsurl);
-	    http.get(smslxlurl);
+            //http.get(smsurl);
             sendFailed(stats,tracelog,test_names_failures);
         }
     }
@@ -97,7 +93,7 @@ function sendSuccess(sub,tracelog,test_names_failures){
     var mailOptions = {
         from: from_success,
         to: to_success,
-        subject: "扫码接口监控--运行测试报告--无失败信息："+sub,
+        subject: "接口监控--运行测试报告--无失败信息："+sub,
         html:html
 	};
 
@@ -127,7 +123,7 @@ function sendFailed(sub,tracelog,test_names_failures){
 	var mailOptions = {
 		from: from_fail,
 		to: to_failure,
-		subject: "扫码接口监控--运行测试报告--有失败信息，请及时查看！！："+sub,
+		subject: "接口监控--运行测试报告--有失败信息，请及时查看！！："+sub,
         html:html,
         attachments:[
                 {   
@@ -164,8 +160,8 @@ function sendError(){
 	var mailOptions = {
 		from: from_error,
 		to: to_failure,
-		subject: "扫码接口监控--运行报告--服务器没有响应，请及时查看！！",
-        text:"扫码接口监控--运行报告--服务器没有响应，请及时查看！！"
+		subject: "接口监控--运行报告--服务器没有响应，请及时查看！！",
+        text:"接口监控--运行报告--服务器没有响应，请及时查看！！"
 	};
 
 	transporter.sendMail(mailOptions, function(error, info) {
