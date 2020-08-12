@@ -4,8 +4,8 @@ var fs = require('fs');
 var http=require('http');
 const path = require('path');
 
-var export_file = './htmlResults_for_mail.html';
-var export_file_junit = './junit.xml';
+var export_file = path.join(__dirname, "./htmlResults_for_mail.html");
+var export_file_junit = path.join(__dirname, "./junit.xml");
 var collection_file = path.join(__dirname, "./API.postman_collection.json");
 var env_file = path.join(__dirname, "./postman_environment.json");
 
