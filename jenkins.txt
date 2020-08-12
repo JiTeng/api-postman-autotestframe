@@ -15,6 +15,7 @@ linux:
 #!/bin/bash
 if [ -d "api-postman-autotestframe" ];then 
     cd api-postman-autotestframe
+    git pull
 else
     git clone https://github.com/JiTeng/api-postman-autotestframe.git
     cd api-postman-autotestframe
