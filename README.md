@@ -21,6 +21,6 @@ git pull
     
 )
 
-call node .\APISmokeTest.js sncwpexbhqbsbebc 1a7b83c02e490938aa6f24b17428361e
+call node .\APISmokeTest.js password1 password2
 
 exit 0
