@@ -1,0 +1,25 @@
+win£º
+@echo off
+if not exist api-postman-autotestframe (
+    git clone https://github.com/JiTeng/api-postman-autotestframe.git
+    cd api-postman-autotestframe
+    call npm init -y
+    call npm install newman nodemailer newman-reporter-html http
+) else (
+    cd api-postman-autotestframe
+    git pull
+)
+call node APISmokeTest.js password1 password2
+exit 0
+
+linux£º
+#!/bin/bash
+if [ -d "api-postman-autotestframe" ];then 
+    cd api-postman-autotestframe
+else
+    git clone https://github.com/JiTeng/api-postman-autotestframe.git
+    cd api-postman-autotestframe
+    npm init -y
+    npm install newman nodemailer newman-reporter-html http
+fi
+node APISmokeTest.js  password1 password2
