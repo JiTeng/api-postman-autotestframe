@@ -9,8 +9,7 @@ if not exist api-postman-autotestframe (
     cd api-postman-autotestframe
     git pull
 )
-call node APISmokeTest.js password1 password2
-exit 0
+node APISmokeTest.js password1 password2
 
 linux:
 #!/bin/bash
