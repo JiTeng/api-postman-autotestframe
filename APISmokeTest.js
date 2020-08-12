@@ -5,8 +5,8 @@ var http=require('http');
 
 var export_file = './htmlResults_for_mail.html';
 var export_file_junit = './junit.xml';
-var collection_file = './API.postman_collection.json';
-var env_file = './postman_environment.json';
+var collection_file = 'API.postman_collection.json';
+var env_file = 'postman_environment.json';
 
 //var to_success = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
 //var to_failure = 'jiteng@inspur.com;zhangsiqiao@inspur.com';
